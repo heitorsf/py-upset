@@ -568,7 +568,7 @@ class DataExtractor:
             for s in out_sets:
                 exclusive_intersection = exclusive_intersection.difference(pd.Index(self.df_dict[s][
                     self.unique_keys]))
-            final_df = self.df_dict[seed].set_index(pd.Index(self.df_dict[seed][self.unique_keys])).ix[
+            final_df = self.df_dict[seed].set_index(pd.Index(self.df_dict[seed][self.unique_keys])).iloc[
                 exclusive_intersection].reset_index(drop=True)
             inters_dict[in_sets] = final_df
 
